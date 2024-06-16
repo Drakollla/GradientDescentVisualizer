@@ -3,15 +3,54 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GradientDescentVisualizer"
+        xmlns:local="clr-namespace:GradientDescentVisualizer" 
+        xmlns:oxy="http://oxyplot.org/wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Градиентный Спуск: Сравнение методов" 
+        Height="450" 
+        Width="800">
 
     <Window.DataContext>
         <local:MainViewModel />
     </Window.DataContext>
 
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical">
+            <Label Content="Функция:" />
+
+            <TextBox />
+
+            <Label Content="Начальная точка:" />
+
+            <TextBox />
+
+            <Label Content="Шаг:" />
+
+            <TextBox />
+
+            <Label Content="Точность:" />
+
+            <TextBox />
+
+            <Label Content="Максимальное количество итераций:" />
+
+            <TextBox />
+
+            <!--Дробление шага-->
+
+
+            <Button Content="" />
+        </StackPanel>
+
+        
+        
+        <oxy:PlotView Grid.Column="1"
+                      Model="{Binding PlotModel}" />
 
     </Grid>
 </Window>
